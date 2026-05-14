@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(243, 224, 227);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* ── NAV ── */
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    height: 65px;
+    background-color: rgb(245, 199, 206);
+    color: white;
+    padding: 0 12px;
+    gap: 16px;
+}
+
+nav ul li {
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+nav ul li:hover { opacity: 0.75; }
+
+.brand {
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 1.1rem;
+    gap: 8px;
+    margin-right: auto;
+}
+
+.brand img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* ── MAIN CONTAINER ── */
+.container {
+    display: flex;
+    gap: 30px;
+    width: 70%;
+    min-height: 60vh;
+    margin: 28px auto;
+    border-radius: 16px;
+    padding: 34px;
+    background-color: white;
+    background-image: url('newjeans.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 4px 24px rgba(245, 199, 206, 0.5);
+}
+
+/* ── SONG LIST ── */
+.songItemcontainer {
+    flex: 1;
+    min-width: 0;
+}
+
+.songItemcontainer h1 {
+    color: rgb(245, 199, 206);
+    font-size: 1.3rem;
+    margin-bottom: 16px;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.15);
+}
+
+.songItem {
+    height: 54px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgba(245, 199, 206, 0.88);
+    color: white;
+    margin: 10px 0;
+    border-radius: 34px;
+    cursor: pointer;
+    transition: background-color 0.25s, transform 0.15s;
+    overflow: hidden;
+}
+
+.songItem:hover {
+    background-color: rgb(240, 175, 185);
+    transform: translateX(4px);
+}
+
+.songItem.active {
+    background-color: rgb(220, 130, 150);
+    box-shadow: 0 3px 12px rgba(220, 130, 150, 0.45);
+}
+
+.songItem img {
+    height: 46px;
+    width: 46px;
+    margin: 0 12px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.songItem .songName {
+    flex: 1;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.songlistplay {
+    flex-shrink: 0;
+}
+
+.timestamp {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0 16px;
+    font-size: 0.82rem;
+    opacity: 0.85;
+}
+
+.timestamp i {
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.timestamp i:hover { transform: scale(1.15); }
+
+/* ── SONG BANNER (right panel) ── */
+.songBanner {
+    width: 220px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.songBanner img {
+    width: 200px;
+    height: 200px;
+    border-radius: 16px;
+    object-fit: cover;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    transition: opacity 0.4s ease-in;
+}
+
+/* ── BOTTOM PLAYER ── */
+.bottom {
+    position: sticky;
+    bottom: 0;
+    height: 110px;
+    background-color: rgb(245, 199, 206);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 6px;
+    box-shadow: 0 -2px 12px rgba(245, 199, 206, 0.6);
+    z-index: 100;
+}
+
+#myProgressbar {
+    width: 90vw;
+    max-width: 860px;
+    cursor: pointer;
+    accent-color: rgb(220, 130, 150);
+    height: 4px;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.icons i {
+    cursor: pointer;
+    transition: transform 0.2s, color 0.2s;
+    color: white;
+}
+
+.icons i:hover {
+    transform: scale(1.15);
+    color: rgb(255, 235, 240);
+}
+
+/* Play button slightly bigger */
+#playBtn {
+    font-size: 2.4rem !important;
+}
+
+.songInfo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.88rem;
+}
+
+#gifImg {
+    border-radius: 4px;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+    .container {
+        width: 94%;
+        padding: 20px;
+        flex-direction: column;
+    }
+    .songBanner {
+        width: 100%;
+        justify-content: center;
+    }
+}

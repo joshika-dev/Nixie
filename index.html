@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nixie - Your Music Player</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/0dd1c8dca9.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li class="brand">
+                <img src="logo.png" alt="Nixie Logo">
+                Nixie
+            </li>
+            <li>Home</li>
+            <li>About</li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="songItemcontainer">
+            <h1>Best of Nixie</h1>
+            <!-- Song items are dynamically injected by script.js -->
+        </div>
+
+        <div class="songBanner">
+            <img id="bannerCover" src="cover.jpg" alt="Now Playing">
+        </div>
+    </div>
+
+    <div class="bottom">
+        <input type="range" id="myProgressbar" min="0" max="100" value="0">
+
+        <div class="icons">
+            <i class="fas fa-3x fa-step-backward" id="prevBtn"></i>
+            <i class="far fa-3x fa-play-circle" id="playBtn"></i>
+            <i class="fas fa-3x fa-step-forward" id="nextBtn"></i>
+        </div>
+
+        <div class="songInfo">
+            <img src="playing.gif" width="30px" alt="playing" id="gifImg">
+            <span id="currentSongName">Select a song</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
